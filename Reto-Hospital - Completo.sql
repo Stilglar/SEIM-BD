@@ -40,7 +40,7 @@ CREATE TABLE hosp.ingresos (numIngreso int PRIMARY KEY IDENTITY (1,1),
 							numPlanta tinyint CHECK (numPlanta<=10),
 							numCama tinyint CHECK (numCama<=200),
 							alergias char(2),
-							obsevaciones varchar(MAX),
+							observaciones varchar(MAX),
 							coste money,
 							diagnostico varchar(40))
 
@@ -72,10 +72,10 @@ INSERT INTO hosp.pacientes(numSegSocial,nombre,apellidos,domicilio,poblacion,pro
 VALUES ('08/7555555','Martin','Fernandez Lopez','C/ Sastres, 21','Madrid','Madrid',28028,'91-333-33-33','15413-S','H')
 
 --Insercion de datos en la tabla ingresos
-INSERT INTO hosp.ingresos (numHistorial,fechaIngreso,IDMedico,numPlanta,numCama,alergias,obsevaciones)
+INSERT INTO hosp.ingresos (numHistorial,fechaIngreso,IDMedico,numPlanta,numCama,alergias,observaciones)
 VALUES ('10203-F','23/01/2009','AJH',5,121,'No','Epileptico')
 
-INSERT INTO hosp.ingresos (numHistorial,fechaIngreso,IDMedico,numPlanta,numCama,alergias,obsevaciones)
+INSERT INTO hosp.ingresos (numHistorial,fechaIngreso,IDMedico,numPlanta,numCama,alergias,observaciones)
 VALUES ('15413-S','13/03/2009','RLQ',2,5,'Si','Alergico a la Penicilina')
 
 INSERT INTO hosp.ingresos (numHistorial,fechaIngreso,IDMedico,numPlanta,numCama,alergias)
@@ -84,7 +84,7 @@ VALUES ('11454-L','25/05/2009','RLQ',3,31,'No')
 INSERT INTO hosp.ingresos (numHistorial,fechaIngreso,IDMedico,numPlanta,numCama,alergias)
 VALUES ('15413-S','29/01/2010','CEM',2,13,'No')
 
-INSERT INTO hosp.ingresos (numHistorial,fechaIngreso,IDMedico,numPlanta,numCama,alergias,obsevaciones)
+INSERT INTO hosp.ingresos (numHistorial,fechaIngreso,IDMedico,numPlanta,numCama,alergias,observaciones)
 VALUES ('14546-E','24/02/2010','AJH',1,5,'Si','Alergico a la Paidoterin')
 
 GO
@@ -135,7 +135,7 @@ CREATE PROCEDURE hosp.pr_ingresadosEntreFechas
     AS
 
     BEGIN
-        SELECT P.apellidos, P.nombre, P.sexo, I.fechaIngreso, I.numPlanta, I.numCama, I.alergias, I.obsevaciones
+        SELECT P.apellidos, P.nombre, P.sexo, I.fechaIngreso, I.numPlanta, I.numCama, I.alergias, I.observaciones
         FROM hosp.pacientes AS P
         JOIN hosp.ingresos AS I
         ON P.numHistorial = I.numHistorial
