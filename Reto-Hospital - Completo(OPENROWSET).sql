@@ -41,7 +41,7 @@ CREATE TABLE hosp.ingresos (numIngreso int PRIMARY KEY IDENTITY (1,1),
 							numPlanta tinyint CHECK (numPlanta<=10),
 							numCama tinyint CHECK (numCama<=200),
 							alergias char(2),
-							obsevaciones varchar(MAX),
+							observaciones varchar(MAX),
 							coste money,
 							diagnostico varchar(40))
 
