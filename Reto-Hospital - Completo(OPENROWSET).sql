@@ -3,7 +3,7 @@ GO
 
 /*COMENTARIOS DEL ALUMNO: He cambiado el tipo de datos de las columnas que son el origen de una FK. Lo he hecho para que el tipo de dato sea el mismo*/
 
-CREATE SCHEMA hosp --Ejecutar primero esta fila ella sola, ya que MMS no permite que se ejecute junto a otros comandos
+CREATE SCHEMA hosp
 GO
 
 /****************************************************************
